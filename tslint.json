@@ -1,0 +1,36 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "indent": [true, "tabs", 4],
+        "semicolon": [true, "always"],
+		"quotemark": [true, "double"],
+		"eofline": true,
+		"only-arrow-functions": true,
+		"member-access": true,
+		"triple-equals": true,
+		"no-shadowed-variable": true,
+        "class-name": true,
+        "file-name-casing": [true, "kebab-case"],
+		"whitespace": [true,
+			"check-branch",
+			"check-decl",
+			"check-operator",
+			"check-module",
+			"check-separator",
+			"check-rest-spread",
+			"check-type",
+			"check-typecast",
+			"check-type-operator"
+		],
+		"comment-format": [true, "check-space"],
+		"no-console": false,
+		"no-namespace": false,
+		"no-empty-interface": false,
+		"forin": false
+    },
+    "rulesDirectory": []
+}

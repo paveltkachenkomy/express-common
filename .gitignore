@@ -1,0 +1,8 @@
+# Dirs
+**/.vscode
+**/.idea
+**/node_modules
+**/build
+
+# Files
+**/package-lock.json

@@ -1,0 +1,39 @@
+{
+	"name": "express-common",
+	"version": "0.1.0",
+	"description": "Express common",
+	"main": "index.js",
+	"scripts": {
+		"start": "node ./build/index.js",
+		"prestart": "npm run lint & npm run build",
+		"build": "npx tsc -p ./tsconfig.json",
+		"lint": "npx tslint --fix -p ./tsconfig.json"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/paveltkachenkomy/express-common.git"
+	},
+	"author": {
+		"name": "Pavel Tkachenko",
+		"email": "paveltkachenko.my@gmail.com"
+	},
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/paveltkachenkomy/express-common/issues"
+	},
+	"homepage": "https://github.com/paveltkachenkomy/express-common#readme",
+	"dependencies": {
+		"cookie-parser": "^1.4.6",
+		"cors": "^2.8.5",
+		"express": "^4.17.2",
+		"helmet": "^5.0.1"
+	},
+	"devDependencies": {
+		"@types/cookie-parser": "^1.4.2",
+		"@types/cors": "^2.8.12",
+		"@types/express": "^4.17.13",
+		"@types/node": "^17.0.8",
+		"tslint": "^6.1.3",
+		"typescript": "^4.5.4"
+	}
+}
