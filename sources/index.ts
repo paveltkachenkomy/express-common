@@ -1,15 +1,15 @@
 import express from "express";
 import path from "path";
-import helment from "helmet";
+import helmet from "helmet";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import {ExpressApi} from "./utils/exepress-api";
+import { ExpressApi } from "./libs/exepress-api";
 
 const app = express();
 
 // Middleware
 app.use(cors());
-app.use(helment());
+app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
@@ -17,12 +17,14 @@ app.use(cookieParser());
 // Static files
 app.use(express.static(path.resolve(__dirname, "public")));
 
+// Language
+
 // Routes
 
 // Error handler
-app.use((err: ExpressApi.IError, req: ExpressApi.IRequest, res: ExpressApi.IResponse, next: ExpressApi.INext) => {
-	if (err.code) {
-		
+app.use((error: ExpressApi.IError, request: ExpressApi.IRequest, response: ExpressApi.IResponse, next: ExpressApi.INext) => {
+	if (error.code) {
+		// TODO
 	}
 });
 
@@ -42,9 +44,11 @@ server.on("error", (err: {code: string, syscall: string}) => {
 			case "EACCES":
 				console.error("Server listening requires elevated privileges");
 				process.exit(1);
+				break;
 			case "EADDRINUSE":
 				console.error("Server listening is already in use");
 				process.exit(1);
+				break;
 			default:
 				console.warn(err);
 				throw err;
