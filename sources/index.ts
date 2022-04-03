@@ -36,11 +36,11 @@ server.on("listening", () => {
 	console.info("Server listening");
 });
 
-server.on("error", (err: {code: string, syscall: string}) => {
-	if (err.syscall !== "listen") {
-		throw err;
+server.on("error", (error: {code: string, syscall: string}) => {
+	if (error.syscall !== "listen") {
+		throw error;
 	} else {
-		switch (err.code) {
+		switch (error.code) {
 			case "EACCES":
 				console.error("Server listening requires elevated privileges");
 				process.exit(1);
@@ -50,8 +50,8 @@ server.on("error", (err: {code: string, syscall: string}) => {
 				process.exit(1);
 				break;
 			default:
-				console.warn(err);
-				throw err;
+				console.warn(error);
+				throw error;
 		}
 	}
 });
