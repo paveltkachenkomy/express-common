@@ -1,5 +1,5 @@
 import express from "express";
-import { Languages } from "../language";
+import { Languages } from "../dictionary";
 
 export namespace ExpressApi {
 	export enum Status {
