@@ -30,7 +30,8 @@
 		"no-console": false,
 		"no-namespace": false,
 		"no-empty-interface": false,
-		"forin": false
-    },
+		"forin": false,
+		"prefer-const": false
+	},
     "rulesDirectory": []
 }

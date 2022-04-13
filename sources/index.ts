@@ -4,7 +4,7 @@ import helmet from "helmet";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import { ExpressApi } from "./libs/exepress-api";
-import { Language } from "./dictionary";
+import { Dictionary } from "./dictionary";
 
 const app = express();
 
