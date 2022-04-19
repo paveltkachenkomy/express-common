@@ -2,18 +2,21 @@ import { CommonDictionary } from "./dictionaries/common";
 import { EnDictionary } from "./dictionaries/en";
 import { RuDictionary } from "./dictionaries/ru";
 
-type Dictionaries = {[key: string]: CommonDictionary };
+export enum Langs {
+	en = "en",
+	ru = "ru",
+}
 
-const dictionaries: Dictionaries = {
+const dictionaries: {[key in Langs]: CommonDictionary} = {
 	"en": EnDictionary,
 	"ru": RuDictionary,
 };
 
 class Lang {
-	private readonly _lang: keyof Dictionaries;
+	private readonly _lang: Langs;
 	private readonly _texts: CommonDictionary;
 
-	constructor(lang: keyof Dictionaries) {
+	constructor(lang: Langs) {
 		this._lang = lang;
 		this._texts = dictionaries[lang];
 	}
@@ -22,8 +25,7 @@ class Lang {
 		return this._texts;
 	}
 
-	get lang(): keyof Dictionaries {
+	get lang(): Langs {
 		return this._lang;
 	}
-
 }
