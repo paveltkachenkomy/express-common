@@ -12,7 +12,7 @@ const dictionaries: {[key in Langs]: CommonDictionary} = {
 	"ru": RuDictionary,
 };
 
-class Lang {
+export class Lang {
 	private readonly _lang: Langs;
 	private readonly _texts: CommonDictionary;
 
