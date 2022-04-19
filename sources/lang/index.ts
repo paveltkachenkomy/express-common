@@ -10,8 +10,8 @@ const dictionaries: Dictionaries = {
 };
 
 class Lang {
-	private _lang: keyof Dictionaries;
-	private _texts: CommonDictionary;
+	private readonly _lang: keyof Dictionaries;
+	private readonly _texts: CommonDictionary;
 
 	constructor(lang: keyof Dictionaries) {
 		this._lang = lang;
