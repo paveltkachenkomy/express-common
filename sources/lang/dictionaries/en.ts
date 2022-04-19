@@ -1,10 +1,9 @@
 import { EditableTextByToken } from "../editable-text-by-token";
-import { Dictionary } from "../dictionary";
-import { Languages } from "../index";
+import { CommonDictionary } from "./common";
 
-export const EngDictionary = new Dictionary(Languages.en, {
+export const EnDictionary: CommonDictionary = {
 	testString: "Test string",
 	testEditableString: new EditableTextByToken("Test editable string by token - %token", {
 		token: "test"
 	}),
-});
+};

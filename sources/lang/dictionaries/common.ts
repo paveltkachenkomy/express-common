@@ -1,6 +1,6 @@
 import { EditableTextByToken } from "../editable-text-by-token";
 
-export interface CommonDictionary {
+export type CommonDictionary = {
 	testString: string;
 	testEditableString: EditableTextByToken<{token: string}>;
-}
+};
