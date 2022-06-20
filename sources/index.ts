@@ -4,7 +4,7 @@ import helmet from "helmet";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import { ExpressApi } from "./libs/exepress-api";
-import { LangMiddleware } from "./libs/lang-middleware";
+import { LangMiddleware } from "./libs/lang";
 
 const app = express();
 
