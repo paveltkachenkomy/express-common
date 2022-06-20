@@ -4,6 +4,7 @@ import helmet from "helmet";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import { ExpressApi } from "./libs/exepress-api";
+import { LangMiddleware } from "./libs/lang-middleware";
 
 const app = express();
 
@@ -13,11 +14,10 @@ app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
+app.use(LangMiddleware);
 
 // Static files
 app.use(express.static(path.resolve(__dirname, "public")));
-
-// Language
 
 // Routes
 

@@ -1,4 +1,5 @@
 import express from "express";
+import { Langs } from "../lang";
 
 export namespace ExpressApi {
 	export enum Status {
@@ -8,7 +9,11 @@ export namespace ExpressApi {
 
 	export interface IResponse extends express.Response<{result: Status, data?: object, message?: string}> {}
 
-	export interface IRequest extends express.Request {}
+	export interface IRequest extends express.Request {
+		cookies: {
+			lang: Langs
+		};
+	}
 
 	export interface IError extends express.ErrorRequestHandler {code: number; name?: string; message?: string; }
 
